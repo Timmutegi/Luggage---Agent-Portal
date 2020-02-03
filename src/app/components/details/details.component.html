@@ -1,0 +1,17 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Booking Details
+        </div>
+        <div class="card-body">
+            <p class="card-text">User ID: {{booking?.user_ID}}</p>
+            <p class="card-text">Shop ID: {{booking?.shop_ID}}</p>
+            <p class="card-text">Status: {{booking?.status}}</p>
+            <p class="card-text">Date: {{booking?.date}}</p>
+            <button type="button" class="btn btn-success" (click)="approve()">Approve</button>
+        </div>
+    </div>
+
+</div>
+<app-footer></app-footer>
