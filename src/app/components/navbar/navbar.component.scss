@@ -6,4 +6,21 @@
     a:hover {
         color: #85d8ba;
     }
+    .ml-auto {
+        margin-right: 80px;
+        .dropdown-toggle,
+        .dropdown-menu {
+            background-color: #182a50 !important;
+            border: 0px;
+            border-radius: 0px;
+        }
+        .dropdown-menu a {
+            font-size: 13px;
+        }
+        .dropdown-menu a:hover {
+            background-color: #182a50 !important;
+            color: #85d8ba;
+            font-size: 13px;
+        }
+    }
 }

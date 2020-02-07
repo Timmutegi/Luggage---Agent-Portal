@@ -1,6 +1,9 @@
 export interface IBooking {
-    user_ID: string;
-    shop_ID: string;
+    customer: {
+        name: string,
+        email: string,
+        phone: number
+    };
     status: string;
     date: string;
 }

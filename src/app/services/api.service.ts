@@ -18,10 +18,6 @@ export class ApiService {
     return this.http.post<any>(this.baseUrl + endpoint, data);
   }
 
-  getBookings(endpoint: string) {
-    return this.http.get<any>(this.baseUrl + endpoint);
-  }
-
   getSpecificBooking(endpoint: string) {
     return this.http.get<any>(this.baseUrl + endpoint);
   }
@@ -29,4 +25,17 @@ export class ApiService {
   updateBooking(endpoint: string, data: JSON) {
     return this.http.patch<any>(this.baseUrl + endpoint, data);
   }
+
+  postHours(endpoint: string, data: JSON) {
+    return this.http.post<any>(this.baseUrl + endpoint, data);
+  }
+
+  get(endpoint: string) {
+    return this.http.get<any>(this.baseUrl + endpoint);
+  }
+
+  patch(endpoint: string, data: JSON) {
+    return this.http.patch<any>(this.baseUrl + endpoint, data);
+  }
+
 }

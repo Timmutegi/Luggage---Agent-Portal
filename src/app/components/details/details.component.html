@@ -5,10 +5,12 @@
             Booking Details
         </div>
         <div class="card-body">
-            <p class="card-text">User ID: {{booking?.user_ID}}</p>
-            <p class="card-text">Shop ID: {{booking?.shop_ID}}</p>
-            <p class="card-text">Status: {{booking?.status}}</p>
-            <p class="card-text">Date: {{booking?.date}}</p>
+            <p class="card-text">Name: {{booking.customer.name}}</p>
+            <p class="card-text">Phone: {{booking.customer.phone}}</p>
+            <p class="card-text">Email: {{booking.customer.email}}</p>
+            <p class="card-text">Status: {{booking.status}}</p>
+            <p class="card-text">Date: {{booking.date | date : 'EEE, MMM d, h:mm:ss'}}</p>
+
             <button type="button" class="btn btn-success" (click)="approve()">Approve</button>
         </div>
     </div>

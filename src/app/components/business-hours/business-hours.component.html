@@ -1,0 +1,309 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <form [formGroup]="businessHoursForm">
+                <div class="row">
+                    <div class="col-md-4 mb-2">
+                        <h6>Sunday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="sundayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="sundayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Monday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="mondayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="mondayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Tuesday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="tuesdayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="tuesdayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Wednesday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="wednesdayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="wednesdayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Thursday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="thursdayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="thursdayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Friday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="fridayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="fridayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Saturday</h6>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Open</label>
+                        <select class="form-control" formControlName="saturdayOpen" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 AM">12 : 00 AM</option>
+                            <option value="1 : 00 AM">1 : 00 AM</option>
+                            <option value="2 : 00 AM">2 : 00 AM</option>
+                            <option value="3 : 00 AM">3 : 00 AM</option>
+                            <option value="4 : 00 AM">4 : 00 AM</option>
+                            <option value="5 : 00 AM">5 : 00 AM</option>
+                            <option value="6 : 00 AM">6 : 00 AM</option>
+                            <option value="7 : 00 AM">7 : 00 AM</option>
+                            <option value="8 : 00 AM">8 : 00 AM</option>
+                            <option value="9 : 00 AM">9 : 00 AM</option>
+                            <option value="10 : 00 AM">10 : 00 AM</option>
+                            <option value="11 : 00 AM">11 : 00 AM</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4 mb-2">
+                        <label>Close</label>
+                        <select class="form-control" formControlName="saturdayClose" required>
+                            <option value="Closed">Closed</option>
+                            <option value="12 : 00 PM">12 : 00 PM</option>
+                            <option value="1 : 00 PM">1 : 00 PM</option>
+                            <option value="2 : 00 PM">2 : 00 PM</option>
+                            <option value="3 : 00 PM">3 : 00 PM</option>
+                            <option value="4 : 00 PM">4 : 00 PM</option>
+                            <option value="5 : 00 PM">5 : 00 PM</option>
+                            <option value="6 : 00 PM">6 : 00 PM</option>
+                            <option value="7 : 00 PM">7 : 00 PM</option>
+                            <option value="8 : 00 PM">8 : 00 PM</option>
+                            <option value="9 : 00 PM">9 : 00 PM</option>
+                            <option value="10 : 00 PM">10 : 00 PM</option>
+                            <option value="11 : 00 PM">11 : 00 PM</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <button *ngIf="submitted === false" type="button" (click)="submit()" class="btn btn-info">Save</button>
+                <button *ngIf="submitted === true" type="button" (click)="update()" class="btn btn-info">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

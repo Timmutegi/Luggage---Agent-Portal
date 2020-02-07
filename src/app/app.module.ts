@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DetailsComponent } from './components/details/details.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
+import { BusinessHoursComponent } from './components/business-hours/business-hours.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { BookingsComponent } from './components/bookings/bookings.component';
     DashboardComponent,
     NavbarComponent,
     BookingsComponent,
-    DetailsComponent
+    DetailsComponent,
+    BusinessHoursComponent
   ],
   imports: [
     BrowserModule,

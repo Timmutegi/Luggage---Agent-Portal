@@ -32,12 +32,12 @@ export class LoginComponent implements OnInit {
       return;
     }
 
-    this.api.login('/login', this.loginForm.value).subscribe(
+    this.api.login('/business/login', this.loginForm.value).subscribe(
       res => {
         console.log(res);
 
         if (res.code === 200) {
-          // localStorage.setItem('token', res.token);
+          localStorage.setItem('id', res.id);
           this.router.navigate(['/dashboard']);
         }
       }
