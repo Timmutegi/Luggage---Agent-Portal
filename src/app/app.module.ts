@@ -20,6 +20,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { DetailsComponent } from './components/details/details.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BusinessHoursComponent } from './components/business-hours/business-hours.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { BusinessHoursComponent } from './components/business-hours/business-hou
     NavbarComponent,
     BookingsComponent,
     DetailsComponent,
-    BusinessHoursComponent
+    BusinessHoursComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

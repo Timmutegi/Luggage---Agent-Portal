@@ -1,0 +1,19 @@
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    button {
+        border-radius: 0px;
+    }
+    input,
+    select {
+        font-size: 13px;
+        border-radius: 0px;
+    }
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    select {
+        outline: none;
+        box-shadow: none !important;
+    }
+}

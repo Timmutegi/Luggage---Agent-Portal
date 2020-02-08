@@ -3,6 +3,9 @@
     margin-bottom: 50px;
     select {
         border-radius: 0px;
+        font-size: 13px;
+        outline: none;
+        box-shadow: none !important;
     }
     button {
         border-radius: 0px;
@@ -10,8 +13,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .row {
-        display: flex;
-        flex-direction: column;
-    }
+    // .row {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
 }

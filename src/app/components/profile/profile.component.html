@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            Business Profile
+        </div>
+        <div class="card-body">
+            <form [formGroup]="profileForm">
+                <div class="form-group">
+                    <label for="inputName">Name</label>
+                    <input type="text" class="form-control" formControlName="name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" formControlName="email">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputPhone">Phone Number</label>
+                        <input type="number" class="form-control" formControlName="phone">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputLocation">Location</label>
+                        <input type="text" class="form-control" formControlName="location">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputCounty">County</label>
+                        <select formControlName="county" class="form-control">
+                        <option selected>Choose...</option>
+                        <option value="Kiambu">Kiambu</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputStreet">Street</label>
+                        <input type="text" class="form-control" formControlName="street">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputCapacity">Capacity</label>
+                        <input type="number" class="form-control" formControlName="capacity">
+                    </div>
+                </div>
+
+                <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

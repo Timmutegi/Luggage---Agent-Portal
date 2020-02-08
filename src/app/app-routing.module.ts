@@ -5,6 +5,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DetailsComponent } from './components/details/details.component';
 import { BusinessHoursComponent } from './components/business-hours/business-hours.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'signup', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'bookings/:ID', component: DetailsComponent },
-  { path: 'business-hours', component: BusinessHoursComponent}
+  { path: 'business-hours', component: BusinessHoursComponent},
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

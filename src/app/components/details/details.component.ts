@@ -10,7 +10,8 @@ import { IBooking } from './booking';
 })
 export class DetailsComponent implements OnInit {
   ID: string;
-  booking: IBooking;
+  booking: any;
+  status: string;
 
   constructor(private activatedRoute: ActivatedRoute, private api: ApiService) { }
 
@@ -18,14 +19,25 @@ export class DetailsComponent implements OnInit {
     this.ID = this.activatedRoute.snapshot.params.ID;
     this.api.getSpecificBooking('/booking/' + this.ID).subscribe(
       res => {
-        // console.log(res);
+        console.log(res);
         this.booking = res;
+        this.status = res.status;
       }
     );
   }
 
   approve() {
     const statusJSON = JSON.parse(JSON.stringify({status: 'Pending'}));
+    console.log(status);
+    this.api.updateBooking('/booking/' + this.ID, statusJSON).subscribe(
+      res => {
+        console.log(res);
+      }
+    );
+  }
+
+  complete() {
+    const statusJSON = JSON.parse(JSON.stringify({status: 'Completed'}));
     console.log(status);
     this.api.updateBooking('/booking/' + this.ID, statusJSON).subscribe(
       res => {
