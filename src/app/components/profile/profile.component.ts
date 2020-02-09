@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   submitted: boolean;
+  isLoading = true;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
@@ -34,7 +35,8 @@ export class ProfileComponent implements OnInit {
     const ID = localStorage.getItem('id');
     this.api.get('/business/' + ID).subscribe(
       res => {
-        console.log(res);
+        // console.log(res);
+        this.isLoading = false;
 
         this.profileForm.get('name').setValue(res.name);
         this.profileForm.get('location').setValue(res.location);

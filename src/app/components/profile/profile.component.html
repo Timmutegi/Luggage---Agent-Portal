@@ -5,6 +5,9 @@
             Business Profile
         </div>
         <div class="card-body">
+            <div class="spinner-container" *ngIf="isLoading">
+                <mat-spinner diameter="20"></mat-spinner>
+            </div>
             <form [formGroup]="profileForm">
                 <div class="form-group">
                     <label for="inputName">Business Name</label>

@@ -5,6 +5,9 @@
             Booking Details
         </div>
         <div class="card-body">
+            <div class="spinner-container" *ngIf="isLoading">
+                <mat-spinner diameter="20"></mat-spinner>
+            </div>
             <p class="card-text">Name: {{booking.customer.firstname}}</p>
             <p class="card-text">Phone: {{booking.customer.phone}}</p>
             <p class="card-text">Email: {{booking.customer.email}}</p>

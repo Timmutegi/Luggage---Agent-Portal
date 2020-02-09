@@ -5,6 +5,9 @@
             Business Working Hours
         </div>
         <div class="card-body">
+            <div class="spinner-container" *ngIf="isLoading">
+                <mat-spinner diameter="20"></mat-spinner>
+            </div>
             <form [formGroup]="businessHoursForm">
                 <div class="row">
                     <div class="col-md-4 mb-2">

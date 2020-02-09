@@ -12,6 +12,7 @@ export class DetailsComponent implements OnInit {
   ID: string;
   booking: any;
   status: string;
+  isLoading = true;
 
   constructor(private activatedRoute: ActivatedRoute, private api: ApiService) { }
 
@@ -21,6 +22,7 @@ export class DetailsComponent implements OnInit {
       res => {
         console.log(res);
         this.booking = res;
+        this.isLoading = false;
         this.status = res.status;
       }
     );
