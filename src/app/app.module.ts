@@ -24,6 +24,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { BookingsComponent } from './components/bookings/bookings.component';
 import { BusinessHoursComponent } from './components/business-hours/business-hours.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -52,7 +54,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatTooltipModule,
     MatFormFieldModule,
     MatInputModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
