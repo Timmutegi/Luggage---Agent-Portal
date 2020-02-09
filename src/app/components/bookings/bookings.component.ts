@@ -10,9 +10,10 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./bookings.component.scss']
 })
 export class BookingsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'email', 'phone', 'status', 'date', 'action'];
+  displayedColumns: string[] = ['name', 'status', 'date', 'action'];
   dataSource = new MatTableDataSource();
   businessID: string;
+  isLoading = true;
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -24,6 +25,7 @@ export class BookingsComponent implements OnInit {
 
     this.api.get('/booking/business/' + this.businessID).subscribe(
       res => {
+        this.isLoading = false;
         this.dataSource.data = res;
       }
     );
@@ -33,6 +35,11 @@ export class BookingsComponent implements OnInit {
     console.log(ID);
     const url = `bookings/${ID}`;
     this.router.navigate([url]);
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

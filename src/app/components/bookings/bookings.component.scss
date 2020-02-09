@@ -6,4 +6,15 @@
     .mat-elevation-z8 {
         margin-bottom: 50px;
     }
+    .mat-form-field {
+        font-size: 14px;
+        width: 40%;
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    .spinner-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
