@@ -7,40 +7,62 @@
         <div class="card-body">
             <form [formGroup]="profileForm">
                 <div class="form-group">
-                    <label for="inputName">Name</label>
-                    <input type="text" class="form-control" formControlName="name">
+                    <label for="inputName">Business Name</label>
+                    <input type="text" class="form-control" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors}">
+                    <div *ngIf="submitted" class="invalid-feedback">
+                        <div>Business Name is required</div>
+                    </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" formControlName="email">
+                        <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                            <div *ngIf="f.email.errors.pattern">Input a valid email</div>
+                        </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="inputPhone">Phone Number</label>
-                        <input type="number" class="form-control" formControlName="phone">
+                        <input type="number" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div>Phone is required</div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputLocation">Location</label>
-                        <input type="text" class="form-control" formControlName="location">
+                        <input type="text" class="form-control" formControlName="location" [ngClass]="{ 'is-invalid': submitted && f.location.errors}">
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div>Location is required</div>
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputCounty">County</label>
-                        <select formControlName="county" class="form-control">
-                        <option selected>Choose...</option>
-                        <option value="Kiambu">Kiambu</option>
-                    </select>
+                        <select formControlName="county" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.county.errors}">
+                            <option selected>Choose...</option>
+                            <option value="Kiambu">Kiambu</option>
+                        </select>
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div>County is required</div>
+                        </div>
                     </div>
                     <div class="form-group col-md-4">
                         <label for="inputStreet">Street</label>
-                        <input type="text" class="form-control" formControlName="street">
+                        <input type="text" class="form-control" formControlName="street" [ngClass]="{ 'is-invalid': submitted && f.street.errors}">
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div>Street is required</div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="inputCapacity">Capacity</label>
-                        <input type="number" class="form-control" formControlName="capacity">
+                        <input type="number" class="form-control" formControlName="capacity" [ngClass]="{ 'is-invalid': submitted && f.capacity.errors}">
+                        <div *ngIf="submitted" class="invalid-feedback">
+                            <div>Capacity is required</div>
+                        </div>
                     </div>
                 </div>
 

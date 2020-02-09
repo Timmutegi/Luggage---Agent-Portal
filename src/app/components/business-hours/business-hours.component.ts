@@ -11,6 +11,7 @@ export class BusinessHoursComponent implements OnInit {
   businessHoursForm: FormGroup;
   submitted: boolean;
   businessHours: any;
+  state: boolean;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
@@ -95,7 +96,7 @@ export class BusinessHoursComponent implements OnInit {
       this.api.get('/workhours/' + shopID).subscribe(res => {
       console.log(res);
       if (res.length === 1) {
-        this.submitted = true;
+        this.state = true;
       }
       this.businessHours = res;
 

@@ -22,7 +22,7 @@ export class BookingsComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.businessID = localStorage.getItem('id');
 
-    this.api.get('/booking/' + this.businessID).subscribe(
+    this.api.get('/booking/business/' + this.businessID).subscribe(
       res => {
         this.dataSource.data = res;
       }

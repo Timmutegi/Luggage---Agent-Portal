@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
+  submitted: boolean;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
@@ -47,6 +48,11 @@ export class ProfileComponent implements OnInit {
   }
 
   update() {
+    this.submitted = true;
+
+    if (this.profileForm.invalid) {
+      return;
+    }
     const ID = localStorage.getItem('id');
     this.api.patch('/business/' + ID, this.profileForm.value).subscribe(
       res => {
