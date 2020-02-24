@@ -54,6 +54,8 @@
                             <div *ngIf="f.password.errors.required">Password is required</div>
                         </div>
                     </div>
+                    <button type="submit" class="btn btn-primary" (click)="back()"><i class="fas fa-long-arrow-alt-left"></i> Back</button>
+
                     <button type="submit" class="btn btn-primary" (click)="signup()">Submit</button>
                 </form>
             </div>
