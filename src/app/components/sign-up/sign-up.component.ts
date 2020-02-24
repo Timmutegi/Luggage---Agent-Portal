@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -11,7 +12,7 @@ export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
@@ -37,10 +38,15 @@ export class SignUpComponent implements OnInit {
       return;
     }
 
-    this.api.signup('/register', this.signupForm.value).subscribe(
+    this.api.signup('/business/register', this.signupForm.value).subscribe(
       res => {
         console.log(res);
+        this.router.navigate(['/dashboard']);
       }
     );
+  }
+
+  back() {
+    this.router.navigate(['/login']);
   }
 }
