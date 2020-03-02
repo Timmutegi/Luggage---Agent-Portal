@@ -8,11 +8,11 @@
             <div class="spinner-container" *ngIf="isLoading">
                 <mat-spinner diameter="20"></mat-spinner>
             </div>
-            <p class="card-text">Name: {{booking.customer.firstname}}</p>
-            <p class="card-text">Phone: {{booking.customer.phone}}</p>
-            <p class="card-text">Email: {{booking.customer.email}}</p>
-            <p class="card-text">Status: {{booking.status}}</p>
-            <p class="card-text">Date: {{booking.date | date : 'EEE, MMM d, h:mm:ss'}}</p>
+            <p class="card-text"><span>Name :</span> {{booking.customer.firstname}}</p>
+            <p class="card-text"><span>Phone :</span> {{booking.customer.phone}}</p>
+            <p class="card-text"><span>Email :  </span> {{booking.customer.email}}</p>
+            <p class="card-text"><span>Status :</span> {{booking.status}}</p>
+            <p class="card-text"><span>Date :</span> {{booking.date | date : 'EEE, MMM d, h:mm:ss'}}</p>
 
             <button *ngIf="status === 'Pending'" type="button" class="btn btn-success" (click)="approve()">Approve</button>
             <button *ngIf="status === 'Active'" type="button" class="btn btn-success" (click)="complete()">Complete</button>
