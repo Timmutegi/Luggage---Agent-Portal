@@ -14,8 +14,8 @@
             <p class="card-text">Status: {{booking.status}}</p>
             <p class="card-text">Date: {{booking.date | date : 'EEE, MMM d, h:mm:ss'}}</p>
 
-            <button *ngIf="status === 'pending'" type="button" class="btn btn-success" (click)="approve()">Approve</button>
-            <button *ngIf="status === 'active'" type="button" class="btn btn-success" (click)="complete()">Complete</button>
+            <button *ngIf="status === 'Pending'" type="button" class="btn btn-success" (click)="approve()">Approve</button>
+            <button *ngIf="status === 'Active'" type="button" class="btn btn-success" (click)="complete()">Complete</button>
 
         </div>
     </div>
