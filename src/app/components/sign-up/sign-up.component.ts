@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   signupForm: FormGroup;
   submitted = false;
+  longitude: number;
+  latitude: number;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) { }
 
@@ -27,10 +29,19 @@ export class SignUpComponent implements OnInit {
       latitude: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    this.getLocation();
   }
 
   get f() {
     return this.signupForm.controls;
+  }
+
+  getLocation() {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.signupForm.get('longitude').setValue(position.coords.longitude);
+      this.signupForm.get('latitude').setValue(position.coords.latitude);
+    });
   }
 
   signup() {
