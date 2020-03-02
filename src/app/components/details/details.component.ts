@@ -20,7 +20,6 @@ export class DetailsComponent implements OnInit {
     this.ID = this.activatedRoute.snapshot.params.ID;
     this.api.getSpecificBooking('/booking/' + this.ID).subscribe(
       res => {
-        console.log(res);
         this.booking = res;
         this.isLoading = false;
         this.status = res.status;
