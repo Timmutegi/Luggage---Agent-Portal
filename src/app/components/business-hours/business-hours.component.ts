@@ -95,7 +95,7 @@ export class BusinessHoursComponent implements OnInit {
     console.log(shopID);
     try {
       this.api.get('/workhours/' + shopID).subscribe(res => {
-      // console.log(res);
+      console.log(Object.keys(res.monday).length);
 
       if (res.length === 1) {
         this.state = true;
@@ -103,20 +103,20 @@ export class BusinessHoursComponent implements OnInit {
       this.isLoading = false;
       this.businessHours = res;
 
-      this.businessHoursForm.get('sundayOpen').setValue(this.businessHours['0'].hours['0'].sunday.open);
-      this.businessHoursForm.get('sundayClose').setValue(this.businessHours['0'].hours['0'].sunday.close);
-      this.businessHoursForm.get('mondayOpen').setValue(this.businessHours['0'].hours['0'].monday.open);
-      this.businessHoursForm.get('mondayClose').setValue(this.businessHours['0'].hours['0'].monday.close);
-      this.businessHoursForm.get('tuesdayOpen').setValue(this.businessHours['0'].hours['0'].tuesday.open);
-      this.businessHoursForm.get('tuesdayClose').setValue(this.businessHours['0'].hours['0'].tuesday.close);
-      this.businessHoursForm.get('wednesdayOpen').setValue(this.businessHours['0'].hours['0'].wednesday.open);
-      this.businessHoursForm.get('wednesdayClose').setValue(this.businessHours['0'].hours['0'].wednesday.close);
-      this.businessHoursForm.get('thursdayOpen').setValue(this.businessHours['0'].hours['0'].thursday.open);
-      this.businessHoursForm.get('thursdayClose').setValue(this.businessHours['0'].hours['0'].thursday.close);
-      this.businessHoursForm.get('fridayOpen').setValue(this.businessHours['0'].hours['0'].friday.open);
-      this.businessHoursForm.get('fridayClose').setValue(this.businessHours['0'].hours['0'].friday.close);
-      this.businessHoursForm.get('saturdayOpen').setValue(this.businessHours['0'].hours['0'].saturday.open);
-      this.businessHoursForm.get('saturdayClose').setValue(this.businessHours['0'].hours['0'].saturday.close);
+      this.businessHoursForm.get('sundayOpen').setValue(this.businessHours.sunday.open);
+      this.businessHoursForm.get('sundayClose').setValue(this.businessHours.sunday.close);
+      this.businessHoursForm.get('mondayOpen').setValue(this.businessHours.monday.open);
+      this.businessHoursForm.get('mondayClose').setValue(this.businessHours.monday.close);
+      this.businessHoursForm.get('tuesdayOpen').setValue(this.businessHours.tuesday.open);
+      this.businessHoursForm.get('tuesdayClose').setValue(this.businessHours.tuesday.close);
+      this.businessHoursForm.get('wednesdayOpen').setValue(this.businessHours.wednesday.open);
+      this.businessHoursForm.get('wednesdayClose').setValue(this.businessHours.wednesday.close);
+      this.businessHoursForm.get('thursdayOpen').setValue(this.businessHours.thursday.open);
+      this.businessHoursForm.get('thursdayClose').setValue(this.businessHours.thursday.close);
+      this.businessHoursForm.get('fridayOpen').setValue(this.businessHours.friday.open);
+      this.businessHoursForm.get('fridayClose').setValue(this.businessHours.friday.close);
+      this.businessHoursForm.get('saturdayOpen').setValue(this.businessHours.saturday.open);
+      this.businessHoursForm.get('saturdayClose').setValue(this.businessHours.saturday.close);
     });
 
     } catch (err) {
