@@ -3,6 +3,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { FormGroup, FormControl } from '@angular/forms';
+
+export interface Data {
+  date: Date;
+}
+
+const ELEMENT_DATA: Data[] = [];
 
 @Component({
   selector: 'app-bookings',
@@ -10,10 +17,27 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./bookings.component.scss']
 })
 export class BookingsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'status', 'date', 'action'];
-  dataSource = new MatTableDataSource();
+  displayedColumns: string[] = ['index', 'firstname', 'lastname', 'status', 'date', 'action'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   businessID: string;
   isLoading = true;
+  minDate: Date;
+  maxDate: Date;
+
+  filterForm = new FormGroup({
+    fromDate: new FormControl(),
+    toDate: new FormControl(),
+  });
+
+  get fromDate() {
+    const fromDate = new Date(this.filterForm.get('fromDate').value);
+    return fromDate;
+  }
+  get toDate() {
+    const toDate = new Date(this.filterForm.get('toDate').value);
+    toDate.setDate(toDate.getDate() + 1);
+    return toDate;
+  }
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
@@ -22,9 +46,22 @@ export class BookingsComponent implements OnInit {
   ngOnInit() {
     this.dataSource.paginator = this.paginator;
     this.businessID = localStorage.getItem('id');
+    this.getBookings();
+    this.dataSource.filterPredicate = (data, filter) => {
+      if (this.fromDate && this.toDate) {
+        return data.date >= this.fromDate && data.date <= this.toDate;
+      }
+      return true;
+    };
+  }
 
+  getBookings() {
     this.api.get('/booking/business/' + this.businessID).subscribe(
       res => {
+        res.forEach((element: { date: string | number | Date; }) => {
+          element.date = new Date(element.date);
+        });
+        console.log(res);
         this.isLoading = false;
         this.dataSource.data = res;
       }
@@ -37,9 +74,13 @@ export class BookingsComponent implements OnInit {
     this.router.navigate([url]);
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  applyFilter1() {
+    this.dataSource.filter = '' + Math.random();
+  }
+
+  reset() {
+    this.filterForm.reset();
+    this.dataSource.filter = '';
   }
 
 }

@@ -1,5 +1,22 @@
 .container {
     margin-top: 50px;
+    form {
+        padding-bottom: 30px;
+        button {
+            margin-left: 20px;
+            border-radius: 0px;
+            font-size: 13px;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        .date-block {
+            display: flex;
+            align-items: center;
+        }
+        .date-block__list {
+            margin-right: 15px;
+        }
+    }
     table {
         width: 100%;
     }
@@ -8,13 +25,7 @@
     }
     .mat-form-field {
         font-size: 14px;
-        width: 40%;
         margin-top: 10px;
         margin-left: 20px;
-    }
-    .spinner-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
