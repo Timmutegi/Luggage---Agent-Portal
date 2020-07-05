@@ -8,7 +8,7 @@
             <div class="spinner-container" *ngIf="isLoading">
                 <mat-spinner diameter="20"></mat-spinner>
             </div>
-            <p class="card-text"><span>Name :</span> {{booking.customer.firstname}}</p>
+            <p class="card-text"><span>Name :</span> {{booking.customer.firstname}} {{booking.customer.lastname}}</p>
             <p class="card-text"><span>Phone :</span> {{booking.customer.phone}}</p>
             <p class="card-text"><span>Email :  </span> {{booking.customer.email}}</p>
             <p class="card-text"><span>Status :</span> {{booking.status}}</p>
