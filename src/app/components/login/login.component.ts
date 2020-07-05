@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
+  isLoading: boolean;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) { }
 
@@ -32,13 +33,14 @@ export class LoginComponent implements OnInit {
       return;
     }
 
+    this.isLoading = true;
     this.api.login('/business/login', this.loginForm.value).subscribe(
       res => {
         console.log(res);
-
         if (res.code === 200) {
           localStorage.setItem('id', res.id);
           this.router.navigate(['/dashboard']);
+          this.isLoading = false;
         }
       }
     );
