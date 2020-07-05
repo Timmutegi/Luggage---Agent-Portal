@@ -13,6 +13,7 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   longitude: number;
   latitude: number;
+  isLoading: boolean;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService, private router: Router) { }
 
@@ -50,11 +51,12 @@ export class SignUpComponent implements OnInit {
     if (this.signupForm.invalid) {
       return;
     }
-
+    this.isLoading = true;
     this.api.signup('/business/register', this.signupForm.value).subscribe(
       res => {
         console.log(res);
         this.router.navigate(['/dashboard']);
+        this.isLoading = false;
       }
     );
   }
