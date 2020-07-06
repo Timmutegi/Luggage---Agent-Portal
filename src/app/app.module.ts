@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { MatTableModule } from '@angular/material/table';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
@@ -19,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatInputModule } from '@angular/material/input';
-import { MatDatepickerModule, MatNativeDateModule} from '@angular/material';
+import { MatDatepickerModule, MatNativeDateModule, MatSnackBarModule } from '@angular/material';
 import { MatTableExporterModule } from 'mat-table-exporter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -29,6 +29,8 @@ import { BusinessHoursComponent } from './components/business-hours/business-hou
 import { ProfileComponent } from './components/profile/profile.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpErrorInterceptor } from './interceptor/httpconfig.interceptor';
+import { HeroSectionComponent } from './components/hero-section/hero-section.component';
 
 
 @NgModule({
@@ -42,7 +44,8 @@ import { environment } from '../environments/environment';
     BookingsComponent,
     DetailsComponent,
     BusinessHoursComponent,
-    ProfileComponent
+    ProfileComponent,
+    HeroSectionComponent
   ],
   imports: [
     BrowserModule,
@@ -62,9 +65,16 @@ import { environment } from '../environments/environment';
     MatTableExporterModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatSnackBarModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    {
+     provide: HTTP_INTERCEPTORS,
+     useClass: HttpErrorInterceptor,
+     multi: true
+   }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
