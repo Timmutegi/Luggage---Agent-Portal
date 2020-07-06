@@ -11,6 +11,8 @@ export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
   submitted: boolean;
   isLoading = true;
+  toggle: boolean;
+  businessInfo: any = [];
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
 
@@ -35,7 +37,8 @@ export class ProfileComponent implements OnInit {
     const ID = localStorage.getItem('id');
     this.api.get('/business/' + ID).subscribe(
       res => {
-        // console.log(res);
+        console.log(res);
+        this.businessInfo = res;
         this.isLoading = false;
 
         this.profileForm.get('name').setValue(res.name);
@@ -61,6 +64,10 @@ export class ProfileComponent implements OnInit {
         console.log(res);
       }
     );
+  }
+
+  switch() {
+    this.toggle = !this.toggle;
   }
 
 }

@@ -1,9 +1,63 @@
 <app-navbar></app-navbar>
+<app-hero-section></app-hero-section>
 <div class="container">
-    <div class="card">
-        <div class="card-header">
-            Business Profile
+    <div class="info" *ngIf="!toggle">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="label">Name</p>
+                <hr>
+                <p class="value">{{businessInfo?.name}}</p>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="label">Email</p>
+                <hr>
+                <p class="value">{{businessInfo?.email}}</p>
+            </div>
+            <div class="col-md-4">
+                <p class="label">Phone</p>
+                <hr>
+                <p class="value">{{businessInfo?.phone}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="label">Street</p>
+                <hr>
+                <p class="value">{{businessInfo?.street}}</p>
+            </div>
+            <div class="col-md-4">
+                <p class="label">County</p>
+                <hr>
+                <p class="value">{{businessInfo?.county}}</p>
+            </div>
+            <div class="col-md-4">
+                <p class="label">Location</p>
+                <hr>
+                <p class="value">{{businessInfo?.location}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="label">Longitude</p>
+                <hr>
+                <p class="value">{{businessInfo?.longitude}}</p>
+            </div>
+            <div class="col-md-4">
+                <p class="label">Latitude</p>
+                <hr>
+                <p class="value">{{businessInfo?.latitude}}</p>
+            </div>
+        </div>
+        <div class="row float-right">
+            <button class="btn btn-info btn-circle" (click)="switch()" title="edit">
+                <fa name="edit"></fa>
+            </button>
+        </div>
+    </div>
+
+    <div class="card" *ngIf="toggle">
         <div class="card-body">
             <div class="spinner-container" *ngIf="isLoading">
                 <mat-spinner diameter="20"></mat-spinner>
@@ -17,7 +71,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors}">
                         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -25,7 +79,7 @@
                             <div *ngIf="f.email.errors.pattern">Input a valid email</div>
                         </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-4">
                         <label for="inputPhone">Phone Number</label>
                         <input type="number" class="form-control" formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f.phone.errors}">
                         <div *ngIf="submitted" class="invalid-feedback">
@@ -60,7 +114,7 @@
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-2">
                         <label for="inputCapacity">Capacity</label>
                         <input type="number" class="form-control" formControlName="capacity" [ngClass]="{ 'is-invalid': submitted && f.capacity.errors}">
                         <div *ngIf="submitted" class="invalid-feedback">
@@ -68,8 +122,13 @@
                         </div>
                     </div>
                 </div>
+                <button type="submit" (click)="switch()" class="btn btn-primary"><fa name="arrow-left"></fa> Back</button>
 
-                <button type="submit" (click)="update()" class="btn btn-primary">Update</button>
+                <div class="row float-right">
+                    <button class="btn btn-success" (click)="update()">
+                        Update
+                    </button>
+                </div>
             </form>
         </div>
     </div>
