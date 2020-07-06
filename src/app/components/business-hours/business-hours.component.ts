@@ -12,6 +12,7 @@ export class BusinessHoursComponent implements OnInit {
   submitted: boolean;
   businessHours: any;
   state = false;
+  toggle: boolean;
   isLoading = true;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) { }
@@ -33,7 +34,6 @@ export class BusinessHoursComponent implements OnInit {
       sundayOpen: ['', Validators.required],
       sundayClose: ['', Validators.required],
     });
-
     this.getBusinessHours();
   }
 
@@ -43,7 +43,6 @@ export class BusinessHoursComponent implements OnInit {
 
   submit() {
     const shopID = localStorage.getItem('id');
-    // console.log(this.shop, this.businessHoursForm.get('mondayOpen'));
     const data = {
       shop: shopID,
       hours: [
@@ -98,11 +97,9 @@ export class BusinessHoursComponent implements OnInit {
       console.log(res);
 
       if (res.length === 1) {
-        // this.state = true;
       }
       this.isLoading = false;
       this.businessHours = res;
-
       this.businessHoursForm.get('sundayOpen').setValue(this.businessHours.sunday.open);
       this.businessHoursForm.get('sundayClose').setValue(this.businessHours.sunday.close);
       this.businessHoursForm.get('mondayOpen').setValue(this.businessHours.monday.open);
@@ -169,5 +166,9 @@ export class BusinessHoursComponent implements OnInit {
         console.log(res);
       }
     );
+  }
+
+  switch() {
+    this.toggle = !this.toggle;
   }
 }
