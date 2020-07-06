@@ -23,6 +23,7 @@
                 border: 0px;
             }
             button {
+                font-size: 13px;
                 border-radius: 0px;
                 height: 2rem;
                 background-color: #820263;
@@ -39,8 +40,9 @@
                 color: white;
             }
             p {
+                margin-top: 10px;
                 color: white;
-                font-size: 13px;
+                font-size: 11px;
                 span {
                     text-decoration: underline;
                     cursor: pointer;
