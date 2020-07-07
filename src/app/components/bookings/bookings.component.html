@@ -1,7 +1,5 @@
 <app-hero-section></app-hero-section>
 <div class="container">
-    <h3>Bookings</h3>
-    <hr>
     <div class="mat-elevation-z8">
         <form [formGroup]="filterForm">
             <div class="date-block">
@@ -37,13 +35,13 @@
             <!-- Name Column -->
             <ng-container matColumnDef="firstname">
                 <th mat-header-cell *matHeaderCellDef> First Name </th>
-                <td mat-cell *matCellDef="let booking"> {{booking.customer.firstname}} </td>
+                <td mat-cell *matCellDef="let booking"> {{booking.customer.firstname | titlecase}} </td>
             </ng-container>
 
             <!-- Name Column -->
             <ng-container matColumnDef="lastname">
                 <th mat-header-cell *matHeaderCellDef> Last Name </th>
-                <td mat-cell *matCellDef="let booking"> {{booking.customer.lastname}} </td>
+                <td mat-cell *matCellDef="let booking"> {{booking.customer.lastname | titlecase}} </td>
             </ng-container>
 
             <!-- Status Column -->
