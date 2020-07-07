@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { NotificationService } from '../../services/notification.service';
 
 @Component({
   selector: 'app-footer',
@@ -12,7 +13,7 @@ export class FooterComponent implements OnInit {
   submitted = false;
   clicked = false;
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private api: ApiService, private notifier: NotificationService) { }
 
   ngOnInit() {
     this.subscribeForm = this.formBuilder.group({
@@ -38,12 +39,14 @@ export class FooterComponent implements OnInit {
         if (res.code === 200) {
           this.submitted = false;
           this.subscribeForm.reset();
+          this.notifier.showSuccess('You are now subscribed');
           // this.flashMessage.show('You are now subscribed', {cssClass: 'p-1', timeout: 10000});
           this.clicked = false;
         }
       },
       err => {
         this.clicked = false;
+        console.log(err);
         // this.errorHandler.handleError(err);
       }
     );
