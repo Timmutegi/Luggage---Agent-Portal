@@ -26,7 +26,7 @@ export class ApiService {
     return this.http.patch<any>(this.baseUrl + endpoint, data);
   }
 
-  postHours(endpoint: string, data: JSON) {
+  post(endpoint: string, data: JSON) {
     return this.http.post<any>(this.baseUrl + endpoint, data);
   }
 

@@ -82,7 +82,7 @@ export class BusinessHoursComponent implements OnInit {
     const dataJSON = JSON.parse(JSON.stringify(data));
     console.log(dataJSON);
 
-    this.api.postHours('/workhours/', dataJSON).subscribe(
+    this.api.post('/workhours/', dataJSON).subscribe(
       res => {
         console.log(res);
       }
