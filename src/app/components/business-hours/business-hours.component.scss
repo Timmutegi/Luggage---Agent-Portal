@@ -5,9 +5,14 @@
     .info {
         .row {
             margin-top: 20px;
+            hr {
+                border: 3px solid #820263;
+                border-radius: 100px;
+                width: 40%;
+            }
         }
         .label {
-            font-size: 13px;
+            font-size: 14px;
             font-family: 'Raleway', sans-serif;
         }
         hr {
@@ -42,8 +47,15 @@
 }
 
 @media only screen and (max-width: 768px) {
-    // .row {
-    //     display: flex;
-    //     flex-direction: column;
-    // }
+    .container {
+        padding-left: 50px;
+        padding-bottom: 50px;
+        .info {
+            .row {
+                hr {
+                    width: 20%;
+                }
+            }
+        }
+    }
 }
