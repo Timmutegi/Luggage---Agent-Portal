@@ -12,6 +12,7 @@
                 flex-direction: column;
                 h4 {
                     color: #85d8ba;
+                    font-family: 'Lato', Sans-serif;
                 }
                 h6 {
                     font-size: 13px;
@@ -26,8 +27,6 @@
                     }
                     .trial {
                         display: flex;
-                        justify-content: center;
-                        align-items: center;
                     }
                     input[type="email"] {
                         outline: none !important;
@@ -44,6 +43,7 @@
                         font-size: 13px;
                     }
                     button {
+                        display: flex;
                         height: 2rem;
                         font-size: 13px;
                         border-radius: 0px;
@@ -55,12 +55,6 @@
                             margin-left: 10px;
                         }
                     }
-                }
-                .flash {
-                    margin-top: 10px;
-                    width: 18rem;
-                    font-size: 13px;
-                    color: #85d8ba;
                 }
                 .social-media {
                     margin-top: 20px;
